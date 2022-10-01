@@ -1,9 +1,10 @@
 import { Breadcrumb, ProductCard } from '../component'
+import { Products } from '../store/data'
 
 const Product = () => {
    return (
       <>
-         <Breadcrumb pageName='Single Product' title='See more Details' />
+         <Breadcrumb pageName='صفحه محصول' title='جزئیـــات را مطالعه کنید' />
          {/* <!-- single product --> */}
          <div className="single-product mt-150 mb-150">
             <div className="container">
@@ -15,17 +16,17 @@ const Product = () => {
                   </div>
                   <div className="col-md-7">
                      <div className="single-product-content">
-                        <h3>Green apples have polyphenols</h3>
-                        <p className="single-product-pricing"><span>Per Kg</span> $50</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta sint dignissimos, rem commodi cum voluptatem quae reprehenderit repudiandae ea tempora incidunt ipsa, quisquam animi perferendis eos eum modi! Tempora, earum.</p>
+                        <h3>متن عنوان محصول</h3>
+                        <p className="single-product-pricing"><span>کیلویی</span> 50,000 تومان</p>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.</p>
                         <div className="single-product-form">
                            <form action="index.html">
                               {/* <input type="number" placeholder="0"> */}
                            </form>
-                           <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart"></i> Add to Cart</a>
-                           <p><strong>Categories: </strong>Fruits, Organic</p>
+                           <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart"></i> افزودن به سبد خرید</a>
+                           <p><strong>دسته بندی ها: </strong>میوه، طبیعی</p>
                         </div>
-                        <h4>Share:</h4>
+                        <h4>اشتراک گذاری:</h4>
                         <ul className="product-share">
                            <li><a href=""><i className="fab fa-facebook-f"></i></a></li>
                            <li><a href=""><i className="fab fa-twitter"></i></a></li>
@@ -45,15 +46,25 @@ const Product = () => {
                <div className="row">
                   <div className="col-lg-8 offset-lg-2 text-center">
                      <div className="section-title">
-                        <h3><span className="orange-text">Related</span> Products</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+                        <h3><span className="orange-text">محصولات</span> مرتبط</h3>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است.</p>
                      </div>
                   </div>
                </div>
                <div className="row">
-                  <ProductCard name='Strawberry' price='85' image='assets/img/products/product-img-1.jpg' />
-                  <ProductCard name='Berry' price='70' image='assets/img/products/product-img-2.jpg' />
-                  <ProductCard name='Lemon' price='35' image='assets/img/products/product-img-3.jpg' />
+                  {/* <!-- product section --> */}
+                  <div className="row">
+                     {Products.slice(0, 3).map((item) => (
+                        <ProductCard
+                           key={item.id}
+                           id={item.id}
+                           name={item.name}
+                           price={item.price}
+                           image={item.image}
+                        />
+                     ))}
+                  </div>
+                  {/* <!-- end product section --> */}
                </div>
             </div>
          </div>
