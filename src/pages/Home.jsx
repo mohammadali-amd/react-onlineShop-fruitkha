@@ -15,8 +15,8 @@ const Home = () => {
                            <p className="subtitle">تـــــازه و طبیعـــــی</p>
                            <h1>متن عنوان سایت</h1>
                            <div className="hero-btns">
-                              <Link to="/shop" className="boxed-btn">فروشگاه</Link>
                               <Link to="/contact" className="bordered-btn">تماس با ما</Link>
+                              <Link to="/shop" className="boxed-btn">فروشگاه</Link>
                            </div>
                         </div>
                      </div>
