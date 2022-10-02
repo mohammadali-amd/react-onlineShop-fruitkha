@@ -181,7 +181,7 @@
 
 	.hero-form .hero-btns a.bordered-btn {
 		margin-left: 0;
-		margin-top: 20px;
+		margin-bottom: 20px;
 	}
 
 	.sticky-wrapper.is-sticky .top-header-area {
@@ -428,7 +428,7 @@
 
 	.hero-btns a.bordered-btn {
 		margin-left: 0;
-		margin-top: 15px;
+		margin-bottom: 15px;
 		display: block;
 	}
 

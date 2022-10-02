@@ -10,7 +10,7 @@ const ProductCardButton = (props) => {
       event.preventDefault();
 
       setModal({
-         message: 'کالای مورد نظر شما با موفقیت به سبد خرید اضافه شد.'
+         message: 'کالای مورد نظر با موفقیت به سبد خرید اضافه شد.'
       });
 
       const enteredAmount = amountInputRef.current.value;

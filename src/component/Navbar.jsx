@@ -86,7 +86,7 @@ const Navbar = () => {
                         <li className="nav-item dropdown">
                            <Link to="/shop" className="nav-link" id="navbarDropdownMenuLink" role="button"
                               data-bs-toggle="dropdown">
-                              فروشگاه ها
+                              فروشگاه
                            </Link>
                            <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                               <li><Link to="/shop" className="dropdown-item">فروشگاه</Link></li>

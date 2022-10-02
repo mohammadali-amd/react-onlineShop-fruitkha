@@ -1,7 +1,22 @@
+import { useContext } from 'react';
 import { Breadcrumb, ProductCard } from '../component'
+import ProductCardButton from '../component/ProductCardButton';
+import CartContext from '../store/cart-context';
 import { Products } from '../store/data'
 
-const Product = () => {
+const Product = (product) => {
+   const cartCtx = useContext(CartContext)
+
+   const addToCartHandler = amount => {
+      cartCtx.addItem({
+         id: product.id,
+         name: product.name,
+         price: product.price,
+         image: product.image,
+         amount: amount
+      });
+   };
+
    return (
       <>
          <Breadcrumb pageName='صفحه محصول' title='جزئیـــات را مطالعه کنید' />
@@ -16,14 +31,14 @@ const Product = () => {
                   </div>
                   <div className="col-md-7">
                      <div className="single-product-content">
-                        <h3>متن عنوان محصول</h3>
-                        <p className="single-product-pricing"><span>کیلویی</span> 50,000 تومان</p>
+                        <h3>سیب</h3>
+                        <p className="single-product-pricing"><span>کیلویی</span> 45,000 تومان</p>
                         <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.</p>
                         <div className="single-product-form">
                            <form action="index.html">
                               {/* <input type="number" placeholder="0"> */}
                            </form>
-                           <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart"></i> افزودن به سبد خرید</a>
+                           <ProductCardButton id={product.id} onAddToCart={addToCartHandler} />
                            <p><strong>دسته بندی ها: </strong>میوه، طبیعی</p>
                         </div>
                         <h4>اشتراک گذاری:</h4>
