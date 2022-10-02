@@ -1,0 +1,26 @@
+.modal {
+   position: fixed;
+   bottom: 1rem;
+   left: 1.5rem;
+   z-index: 100;
+   overflow: hidden;
+   padding: 1rem;
+   background: #F28123;
+   border-radius: 0.7rem;
+   transition-duration: 2s;
+}
+
+.close {
+   position: absolute;
+   right: 0.7rem;
+   top: 0.2rem;
+   color: #fff;
+   background-color: rgba(255, 255, 255, 0);
+   font-weight: 700;
+   border: none;
+}
+
+.text {
+   color: #fff;
+   padding-top: 2rem;
+}
