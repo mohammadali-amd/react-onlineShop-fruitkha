@@ -2875,26 +2875,39 @@ button.cart-btn i {
   margin-right: 5px;
 }
 
+/* /////////////////// */
+
 .single-product-form button.cart-btn {
   margin-bottom: 15px;
 }
 
+/* add transition to navbar on scroll */
 .navbar-scroll-bg {
   background-color: #051922;
   opacity: 0.9;
   transition-duration: 0.5s;
 }
 
+/* add transition to navbar on scroll back to top */
 .fixed-top {
   transition-duration: 0.5s;
 }
 
-/* show navbar links onHover */
-.dropdown:hover .dropdown-menu {
-  display: block;
-  margin-top: 0;
-}
-
 .dropdown-item:hover {
   background-color: #F28123;
+}
+
+/* dropdown transition onHover */
+@media (min-width:961px) {
+  ul li:hover ul.dropdown-menu {
+    display: block;
+  }
+
+}
+
+/* hidden map on mobile */
+@media (max-width:641px) {
+  .google-map-responsive {
+    display: none;
+  }
 }
