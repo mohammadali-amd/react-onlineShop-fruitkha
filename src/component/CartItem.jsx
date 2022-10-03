@@ -1,18 +1,9 @@
-import React, { useContext } from 'react'
-import CartContext from '../store/cart-context';
-
 const CartItem = (props) => {
-   const cartCtx = useContext(CartContext);
-
-   const ItemRemoveHandler = (id) => {
-      cartCtx.clearItem(id);
-   };
-
    return (
       <tr className="table-body-row">
          <td className="product-remove">
             <button
-               onClick={ItemRemoveHandler.bind(null, props.id)}
+               onClick={props.onClear}
                style={{ border: 'none', background: 'none', outline: 'none' }}
             >
                <i className="far fa-window-close"></i>

@@ -16,6 +16,10 @@ const Cart = () => {
       cartCtx.addItem(item);
    };
 
+   const ItemRemoveHandler = (id) => {
+      cartCtx.clearItem(id);
+   };
+
    return (
       <>
          <Breadcrumb pageName='سبد خرید' title='از اعتمـــاد شما سپاس گذاریم' />
@@ -45,6 +49,7 @@ const Cart = () => {
                                     price={item.price}
                                     onRemove={cartItemRemoveHandler.bind(null, item.id)}
                                     onAdd={cartItemAddHandler.bind(null, item)}
+                                    onClear={ItemRemoveHandler.bind(null, item.id)}
                                  />
                               ))}
                            </tbody>
