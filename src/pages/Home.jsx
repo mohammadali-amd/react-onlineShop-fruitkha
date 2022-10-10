@@ -190,7 +190,7 @@ const Home = () => {
                </div>
                <div className="row">
                   <div className="col-lg-12 text-center">
-                     <a href="news.html" className="boxed-btn">مقالات بیشتر</a>
+                     <Link to="/news" className="boxed-btn">مقالات بیشتر</Link>
                   </div>
                </div>
             </div>
