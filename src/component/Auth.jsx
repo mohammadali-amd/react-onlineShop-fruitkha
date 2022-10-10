@@ -13,12 +13,12 @@ const Auth = (props) => {
          <button onClick={props.onClose} className={styles.close}>x</button>
 
          <label className={styles.text} for="username">نام کاربری:</label><br />
-         <input type="text" id="username" name="username" placeholder="نام کاربری" /><br />
+         <input className={styles.inputStyle} type="text" id="username" name="username" placeholder="نام کاربری" /><br />
 
          <label className={styles.text} for="lastname">رمز ورود:</label><br />
-         <input type="text" id="lastname" name="lastname" placeholder="رمز ورود" /><br /><br />
+         <input className={styles.inputStyle} type="text" id="lastname" name="lastname" placeholder="رمز ورود" /><br /><br />
 
-         <input type="submit" value="ورود" />
+         <input className={styles.btn} type="submit" value="ورود" />
       </form>
    );
 };
