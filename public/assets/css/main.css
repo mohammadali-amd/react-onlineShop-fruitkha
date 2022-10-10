@@ -33,6 +33,8 @@ body::-webkit-scrollbar-thumb {
 ul,
 span,
 tr,
+label,
+input,
 th {
   font-family: Vazirmatn;
 }

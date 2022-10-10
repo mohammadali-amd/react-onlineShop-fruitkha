@@ -1,9 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CartContext from '../store/cart-context';
+import Auth from './Auth'
 
 const Navbar = () => {
    const cartCtx = useContext(CartContext);
+   const [modal, setModal] = useState();
 
    // Change nav color when scrolling 
    const [color, setColor] = useState(false);
@@ -20,6 +22,18 @@ const Navbar = () => {
    const numberOfCartItem = cartCtx.items.reduce((curNumber, item) => {
       return curNumber + item.amount
    }, 0)
+
+   const submitHandler = (event) => {
+      event.preventDefault();
+
+      setModal({
+         message: 'کالای مورد نظر با موفقیت به سبد خرید اضافه شد.'
+      });
+   };
+
+   const errorHandler = () => {
+      setModal(null);
+   }
 
    return (
       <nav className={`fixed-top ${color ? 'navbar-scroll-bg' : ''}`}>
@@ -97,7 +111,17 @@ const Navbar = () => {
                         </li>
                      </ul>
 
-                     <div>
+                     <form onSubmit={submitHandler}>
+                        {modal && <Auth
+                           message={modal.message}
+                           onClose={errorHandler}
+                        />}
+                        <button className="cart-btn">
+                           حساب کاربری
+                        </button>
+                     </form>
+
+                     <div style={{ marginRight: '1rem' }}>
                         <div className="header-icons">
                            <Link className="shopping-cart" to="/cart"> <sup>{numberOfCartItem > 0 && numberOfCartItem} </sup><i className="fas fa-shopping-cart"></i></Link>
                            <Link className="mobile-hide search-bar-icon" to="#"><i className="fas fa-search"></i></Link>
